@@ -24,23 +24,23 @@ const HeroSection = () => {
   const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation()
 
   return (
-    <section ref={heroRef} className="pt-20 pb-16 bg-gradient-to-br from-nia-bg-light to-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section ref={heroRef} className="pt-24 pb-20 sm:pt-20 sm:pb-16 bg-gradient-to-br from-nia-bg-light to-white">
+      <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
         <div className={`text-center transition-all duration-1000 ${heroVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-          <p className="text-nia-purple font-medium mb-4 tracking-wide uppercase text-sm">
+          <p className="text-nia-purple font-medium mb-6 sm:mb-4 tracking-wide uppercase text-sm">
             Next-Gen AI Technology
           </p>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-nia-purple mb-8">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-nia-purple mb-6 sm:mb-8 leading-tight">
             Meet Nia
           </h1>
-          <h2 className="text-3xl md:text-4xl font-bold text-nia-dark mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-nia-dark mb-8 sm:mb-12 leading-tight">
             Your AI Receptionist
           </h2>
-          <p className="text-xl text-nia-gray max-w-3xl mx-auto mb-12 leading-relaxed">
+          <p className="text-lg sm:text-xl text-nia-gray max-w-3xl mx-auto mb-10 sm:mb-12 leading-relaxed px-4 sm:px-0">
             Nia is your Personal Neural Intelligent Assistant that transforms business communication.
             Handle calls, schedule appointments, and provide customer support 24/7 with human-like intelligence.
           </p>
-          <button className="bg-nia-purple text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-nia-purple/90 transition-colors shadow-lg animate-pulse">
+          <button className="bg-nia-purple text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-nia-purple/90 transition-colors shadow-lg animate-pulse w-full sm:w-auto max-w-xs">
             Get Started Free
           </button>
         </div>
@@ -54,14 +54,14 @@ const StatusBanner = () => {
   const { ref: statusRef, isVisible: statusVisible } = useScrollAnimation()
 
   return (
-    <section ref={statusRef} className="py-8 bg-white border-y border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`flex items-center justify-center space-x-8 transition-all duration-1000 ${statusVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+    <section ref={statusRef} className="py-10 sm:py-8 bg-white border-y border-gray-100">
+      <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
+        <div className={`flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 transition-all duration-1000 ${statusVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
           <div className="flex items-center space-x-3">
             <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-            <span className="text-nia-dark font-medium">Nia is Active</span>
+            <span className="text-nia-dark font-medium text-center">Nia is Active</span>
           </div>
-          <div className="text-nia-gray">
+          <div className="text-nia-gray text-center">
             Handling <span className="font-bold text-nia-dark">247</span> calls today!
           </div>
           <svg className="h-6 w-6 text-nia-purple" fill="currentColor" viewBox="0 0 24 24">
@@ -70,10 +70,10 @@ const StatusBanner = () => {
         </div>
 
         {/* Chat Interface Mockup */}
-        <div className={`mt-12 max-w-4xl mx-auto transition-all duration-1000 delay-300 ${statusVisible ? 'animate-scale-in' : 'opacity-0'}`}>
-          <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-8 animate-float">
+        <div className={`mt-16 sm:mt-12 max-w-4xl mx-auto transition-all duration-1000 delay-300 ${statusVisible ? 'animate-scale-in' : 'opacity-0'}`}>
+          <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-6 sm:p-8 animate-float mx-4 sm:mx-0">
             {/* Header */}
-            <div className="flex items-center justify-between mb-6">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 sm:mb-6 space-y-4 sm:space-y-0">
               <div className="flex items-center space-x-3">
                 <div className="w-12 h-12 bg-gradient-to-br from-nia-purple to-nia-teal rounded-full flex items-center justify-center">
                   <span className="text-white font-bold text-lg">N</span>
@@ -87,14 +87,14 @@ const StatusBanner = () => {
                 </div>
               </div>
 
-              <div className="text-right">
+              <div className="text-left sm:text-right">
                 <p className="text-sm text-nia-gray">Response time</p>
                 <p className="font-bold text-nia-purple text-lg">&lt; 2 seconds</p>
               </div>
             </div>
 
             {/* Content Grid */}
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-6">
               {/* Left Side - Chat Message */}
               <div>
                 <div className="bg-nia-bg-light rounded-2xl p-4 mb-4">
@@ -119,22 +119,22 @@ const StatusBanner = () => {
               </div>
 
               {/* Right Side - Live Stats */}
-              <div className="bg-gradient-to-br from-nia-purple/5 to-nia-teal/5 rounded-xl p-4">
-                <h4 className="font-semibold text-nia-dark mb-3">Live Performance</h4>
-                <div className="space-y-3">
+              <div className="bg-gradient-to-br from-nia-purple/5 to-nia-teal/5 rounded-xl p-5 sm:p-4 mt-4 md:mt-0">
+                <h4 className="font-semibold text-nia-dark mb-4 sm:mb-3 text-base">Live Performance</h4>
+                <div className="space-y-4 sm:space-y-3">
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-nia-gray">Calls handled today</span>
-                    <span className="font-bold text-nia-purple">247</span>
+                    <span className="font-bold text-nia-purple text-base">247</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-nia-gray">Average call duration</span>
-                    <span className="font-bold text-nia-purple">3:42</span>
+                    <span className="font-bold text-nia-purple text-base">3:42</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-nia-gray">Issues resolved</span>
-                    <span className="font-bold text-nia-purple">94%</span>
+                    <span className="font-bold text-nia-purple text-base">94%</span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2 mt-3">
+                  <div className="w-full bg-gray-200 rounded-full h-2 mt-4 sm:mt-3">
                     <div className="bg-gradient-to-r from-nia-purple to-nia-teal h-2 rounded-full" style={{width: '94%'}} />
                   </div>
                 </div>
@@ -173,11 +173,11 @@ const IndustrySection = () => {
   const duplicatedIndustries = [...industries, ...industries]
 
   return (
-    <section ref={industryRef} className="py-20 bg-nia-bg-light overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`text-center mb-20 transition-all duration-1000 ${industryVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-          <h2 className="text-4xl font-bold text-nia-dark mb-6">Perfect for Every Industry</h2>
-          <p className="text-xl text-nia-gray max-w-3xl mx-auto">
+    <section ref={industryRef} className="py-24 sm:py-20 bg-nia-bg-light overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
+        <div className={`text-center mb-16 sm:mb-20 transition-all duration-1000 ${industryVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+          <h2 className="text-3xl sm:text-4xl font-bold text-nia-dark mb-6 sm:mb-6 leading-tight">Perfect for Every Industry</h2>
+          <p className="text-lg sm:text-xl text-nia-gray max-w-3xl mx-auto px-4 sm:px-0 leading-relaxed">
             Nia adapts to your business needs, providing professional AI reception services across all industries
           </p>
         </div>
@@ -244,26 +244,26 @@ const FeaturesSection = () => {
   ]
 
   return (
-    <section id="features" ref={featuresRef} className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`text-center mb-20 transition-all duration-1000 ${featuresVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-          <h2 className="text-4xl font-bold text-nia-dark mb-6">Why Choose Nia for Your Business</h2>
-          <p className="text-xl text-nia-gray max-w-3xl mx-auto">
+    <section id="features" ref={featuresRef} className="py-24 sm:py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
+        <div className={`text-center mb-16 sm:mb-20 transition-all duration-1000 ${featuresVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+          <h2 className="text-3xl sm:text-4xl font-bold text-nia-dark mb-6 sm:mb-6 leading-tight">Why Choose Nia for Your Business</h2>
+          <p className="text-lg sm:text-xl text-nia-gray max-w-3xl mx-auto px-4 sm:px-0 leading-relaxed">
             Nia combines cutting-edge neural intelligence with human-like conversation to deliver exceptional customer experiences for modern businesses.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {features.map((feature, index) => (
             <div
               key={feature.title}
-              className={`p-8 rounded-2xl border border-gray-100 hover:border-nia-purple/20 hover:shadow-lg hover:scale-105 transition-all group duration-500 delay-${index * 100} ${featuresVisible ? 'animate-scale-in' : 'opacity-0'}`}
+              className={`p-6 sm:p-8 rounded-2xl border border-gray-100 hover:border-nia-purple/20 hover:shadow-lg hover:scale-105 transition-all group duration-500 delay-${index * 100} ${featuresVisible ? 'animate-scale-in' : 'opacity-0'}`}
             >
-              <div className="w-16 h-16 bg-nia-purple/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-nia-purple/20 transition-colors">
-                <Icon name={feature.icon} className="h-8 w-8" />
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-nia-purple/10 rounded-2xl flex items-center justify-center mb-5 sm:mb-6 group-hover:bg-nia-purple/20 transition-colors">
+                <Icon name={feature.icon} className="h-7 w-7 sm:h-8 sm:w-8" />
               </div>
-              <h3 className="text-xl font-bold text-nia-dark mb-4">{feature.title}</h3>
-              <p className="text-nia-gray leading-relaxed">{feature.description}</p>
+              <h3 className="text-lg sm:text-xl font-bold text-nia-dark mb-3 sm:mb-4 leading-tight">{feature.title}</h3>
+              <p className="text-nia-gray leading-relaxed text-sm sm:text-base">{feature.description}</p>
             </div>
           ))}
         </div>
@@ -329,18 +329,18 @@ const DemoSection = () => {
   }
 
   return (
-    <section ref={demoRef} className="py-20 bg-gradient-to-br from-nia-purple to-nia-teal">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`text-center mb-16 transition-all duration-1000 ${demoVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-          <h2 className="text-4xl font-bold text-white mb-8">Experience Nia in Action</h2>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto">
+    <section ref={demoRef} className="py-24 sm:py-20 bg-gradient-to-br from-nia-purple to-nia-teal">
+      <div className="max-w-4xl mx-auto px-6 sm:px-6 lg:px-8">
+        <div className={`text-center mb-12 sm:mb-16 transition-all duration-1000 ${demoVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 sm:mb-8 leading-tight">Experience Nia in Action</h2>
+          <p className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto px-4 sm:px-0 leading-relaxed">
             Get a live demonstration call from Nia. See firsthand how natural and professional our AI receptionist sounds.
           </p>
         </div>
 
         <div className={`max-w-2xl mx-auto transition-all duration-1000 delay-300 ${demoVisible ? 'animate-scale-in' : 'opacity-0'}`}>
-          <form onSubmit={handleSubmit} className="bg-white/10 backdrop-blur-md rounded-2xl p-8 space-y-6">
-            <div className="grid md:grid-cols-2 gap-6">
+          <form onSubmit={handleSubmit} className="bg-white/10 backdrop-blur-md rounded-2xl p-6 sm:p-8 space-y-6 mx-4 sm:mx-0">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
                 <label className="block text-white/90 text-sm font-medium mb-2">Full Name *</label>
                 <input
@@ -367,7 +367,7 @@ const DemoSection = () => {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
                 <label className="block text-white/90 text-sm font-medium mb-2">Email Address *</label>
                 <input
@@ -443,23 +443,23 @@ const HowItWorksSection = () => {
   ]
 
   return (
-    <section id="how-it-works" ref={worksRef} className="py-20 bg-nia-bg-light">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`text-center mb-20 transition-all duration-1000 ${worksVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-          <h2 className="text-4xl font-bold text-nia-dark mb-6">How Nia Works</h2>
-          <p className="text-xl text-nia-gray max-w-3xl mx-auto">
+    <section id="how-it-works" ref={worksRef} className="py-24 sm:py-20 bg-nia-bg-light">
+      <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
+        <div className={`text-center mb-16 sm:mb-20 transition-all duration-1000 ${worksVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+          <h2 className="text-3xl sm:text-4xl font-bold text-nia-dark mb-6 sm:mb-6 leading-tight">How Nia Works</h2>
+          <p className="text-lg sm:text-xl text-nia-gray max-w-3xl mx-auto px-4 sm:px-0 leading-relaxed">
             Get started with Nia in minutes. Our simple setup process gets your AI receptionist ready to handle calls and serve your customers professionally.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-8">
           {steps.map((step, index) => (
-            <div key={step.number} className={`text-center transition-all duration-700 delay-${index * 200} ${worksVisible ? 'animate-scale-in' : 'opacity-0'}`}>
-              <div className="w-20 h-20 bg-nia-purple rounded-2xl flex items-center justify-center mx-auto mb-6 hover:scale-110 transition-transform">
-                <span className="text-2xl font-bold text-white">{step.number}</span>
+            <div key={step.number} className={`text-center transition-all duration-700 delay-${index * 200} ${worksVisible ? 'animate-scale-in' : 'opacity-0'} px-4 sm:px-0`}>
+              <div className="w-18 h-18 sm:w-20 sm:h-20 bg-nia-purple rounded-2xl flex items-center justify-center mx-auto mb-6 sm:mb-6 hover:scale-110 transition-transform">
+                <span className="text-xl sm:text-2xl font-bold text-white">{step.number}</span>
               </div>
-              <h3 className="text-xl font-bold text-nia-dark mb-4">{step.title}</h3>
-              <p className="text-nia-gray leading-relaxed">{step.description}</p>
+              <h3 className="text-lg sm:text-xl font-bold text-nia-dark mb-4 sm:mb-4 leading-tight">{step.title}</h3>
+              <p className="text-nia-gray leading-relaxed text-sm sm:text-base">{step.description}</p>
             </div>
           ))}
         </div>
@@ -479,23 +479,23 @@ const StatsSection = () => {
   ]
 
   return (
-    <section ref={statsRef} className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`text-center mb-20 transition-all duration-1000 ${statsVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-          <h2 className="text-4xl font-bold text-nia-dark mb-6">Transform Your Business Communication</h2>
-          <p className="text-xl text-nia-gray max-w-3xl mx-auto">
+    <section ref={statsRef} className="py-24 sm:py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
+        <div className={`text-center mb-16 sm:mb-20 transition-all duration-1000 ${statsVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+          <h2 className="text-3xl sm:text-4xl font-bold text-nia-dark mb-6 sm:mb-6 leading-tight">Transform Your Business Communication</h2>
+          <p className="text-lg sm:text-xl text-nia-gray max-w-3xl mx-auto px-4 sm:px-0 leading-relaxed">
             Join thousands of businesses that have revolutionized their customer service with Nia's intelligent AI receptionist.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
           {stats.map((stat, index) => (
             <div
               key={stat.label}
-              className={`text-center p-8 rounded-2xl bg-nia-bg-light hover:scale-105 transition-all duration-500 delay-${index * 100} ${statsVisible ? 'animate-bounce-in' : 'opacity-0'}`}
+              className={`text-center p-6 sm:p-8 rounded-2xl bg-nia-bg-light hover:scale-105 transition-all duration-500 delay-${index * 100} ${statsVisible ? 'animate-bounce-in' : 'opacity-0'}`}
             >
-              <div className="text-4xl font-bold text-nia-purple mb-2">{stat.number}</div>
-              <div className="text-nia-gray font-medium">{stat.label}</div>
+              <div className="text-2xl sm:text-4xl font-bold text-nia-purple mb-2">{stat.number}</div>
+              <div className="text-nia-gray font-medium text-sm sm:text-base">{stat.label}</div>
             </div>
           ))}
         </div>
