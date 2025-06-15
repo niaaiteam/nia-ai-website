@@ -134,13 +134,13 @@ const Features = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section ref={heroRef} className="pt-24 pb-16 bg-gradient-to-br from-nia-bg-light to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section ref={heroRef} className="pt-32 pb-20 sm:pt-36 lg:pt-40 sm:pb-16 bg-gradient-to-br from-nia-bg-light to-white">
+        <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
           <div className={`text-center transition-all duration-1000 ${heroVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-            <h1 className="text-5xl md:text-6xl font-bold text-nia-dark mb-8">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-nia-dark mb-8 sm:mb-8 leading-tight">
               Powerful Features
             </h1>
-            <p className="text-xl text-nia-gray max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl text-nia-gray max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
               Discover the advanced capabilities that make Nia the smartest AI receptionist
               for your business.
             </p>
@@ -149,8 +149,8 @@ const Features = () => {
       </section>
 
       {/* Features Grid */}
-      <section ref={featuresRef} className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section ref={featuresRef} className="py-24 sm:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
             {detailedFeatures.map((feature, index) => (
               <div
@@ -195,26 +195,47 @@ const Features = () => {
       </section>
 
       {/* Integration Section */}
-      <section className="py-20 bg-nia-bg-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-nia-dark mb-4">Seamless Integrations</h2>
-            <p className="text-xl text-nia-gray">Works with all your favorite business tools</p>
+      <section className="py-24 sm:py-20 bg-nia-bg-light">
+        <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-nia-dark mb-6 sm:mb-4 leading-tight">Seamless Integrations</h2>
+            <p className="text-lg sm:text-xl text-nia-gray px-4 sm:px-0">Works with all your favorite business tools</p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 sm:gap-8">
             {[
-              "Salesforce", "HubSpot", "Calendly", "Zoom", "Microsoft Teams", "Google Workspace",
-              "Slack", "Zapier", "QuickBooks", "Stripe", "Mailchimp", "WordPress"
+              { name: "Salesforce", logo: "https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" },
+              { name: "HubSpot", logo: "https://upload.wikimedia.org/wikipedia/commons/3/3f/HubSpot_Logo.svg" },
+              { name: "Calendly", logo: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Calendly_logo.svg" },
+              { name: "Zoom", logo: "https://upload.wikimedia.org/wikipedia/commons/d/d1/Zoom_Video_Communications_Logo.svg" },
+              { name: "Microsoft Teams", logo: "https://upload.wikimedia.org/wikipedia/commons/c/c9/Microsoft_Office_Teams_%282018%E2%80%93present%29.svg" },
+              { name: "Google Workspace", logo: "https://upload.wikimedia.org/wikipedia/commons/5/5f/Google_Workspace_Logo.svg" },
+              { name: "Slack", logo: "https://upload.wikimedia.org/wikipedia/commons/b/b9/Slack_Technologies_Logo.svg" },
+              { name: "Zapier", logo: "https://upload.wikimedia.org/wikipedia/commons/c/cb/Zapier_logo.svg" },
+              { name: "QuickBooks", logo: "https://upload.wikimedia.org/wikipedia/commons/c/ce/Intuit_QuickBooks_logo.svg" },
+              { name: "Stripe", logo: "https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg" },
+              { name: "Mailchimp", logo: "https://upload.wikimedia.org/wikipedia/commons/2/2e/Mailchimp_Logo.svg" },
+              { name: "WordPress", logo: "https://upload.wikimedia.org/wikipedia/commons/9/98/WordPress_blue_logo.svg" }
             ].map((integration, index) => (
               <div
-                key={integration}
-                className={`bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-all duration-300 delay-${index * 50}`}
+                key={integration.name}
+                className={`bg-white p-4 sm:p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-all duration-300 delay-${index * 50} group`}
               >
-                <div className="h-12 flex items-center justify-center mb-3">
-                  <div className="w-8 h-8 bg-nia-purple/20 rounded" />
+                <div className="h-10 sm:h-12 flex items-center justify-center mb-3">
+                  <img
+                    src={integration.logo}
+                    alt={integration.name}
+                    className="h-8 sm:h-10 w-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      const fallback = target.nextElementSibling as HTMLElement;
+                      if (fallback) fallback.style.display = 'block';
+                    }}
+                  />
+                  <div className="w-8 h-8 bg-nia-purple/20 rounded hidden" />
                 </div>
-                <p className="text-sm font-medium text-nia-dark">{integration}</p>
+                <p className="text-xs sm:text-sm font-medium text-nia-dark">{integration.name}</p>
               </div>
             ))}
           </div>
@@ -222,17 +243,17 @@ const Features = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-nia-purple to-nia-teal">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">Ready to Experience These Features?</h2>
-          <p className="text-xl text-white/90 mb-8">
-            Start your free trial and see how Nia transforms your business communication
+      <section className="py-24 sm:py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-6 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-nia-dark mb-6 sm:mb-6 leading-tight">Ready to Get Started?</h2>
+          <p className="text-lg sm:text-xl text-nia-gray mb-10 sm:mb-8 px-4 sm:px-0 leading-relaxed">
+            Join thousands of businesses already using Nia to transform their customer service
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-nia-purple px-8 py-4 rounded-lg text-lg font-medium hover:bg-white/90 transition-colors shadow-lg">
+            <button className="bg-gradient-to-r from-nia-purple to-nia-teal text-white px-8 py-4 rounded-xl text-lg font-medium hover:shadow-lg hover:scale-105 transition-all duration-200 shadow-md">
               Start Free Trial
             </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-white/10 transition-colors">
+            <button className="border-2 border-nia-purple text-nia-purple px-8 py-4 rounded-xl text-lg font-medium hover:bg-nia-purple/5 transition-colors">
               Schedule Demo
             </button>
           </div>

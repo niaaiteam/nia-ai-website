@@ -119,13 +119,13 @@ const Pricing = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section ref={heroRef} className="pt-24 pb-16 bg-gradient-to-br from-nia-bg-light to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section ref={heroRef} className="pt-32 pb-20 sm:pt-36 lg:pt-40 sm:pb-16 bg-gradient-to-br from-nia-bg-light to-white">
+        <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
           <div className={`text-center transition-all duration-1000 ${heroVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-            <h1 className="text-5xl md:text-6xl font-bold text-nia-dark mb-8">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-nia-dark mb-8 sm:mb-8 leading-tight">
               Simple, Transparent Pricing
             </h1>
-            <p className="text-xl text-nia-gray max-w-3xl mx-auto leading-relaxed mb-12">
+            <p className="text-lg sm:text-xl text-nia-gray max-w-3xl mx-auto leading-relaxed mb-12 px-4 sm:px-0">
               Choose the perfect plan for your business. All plans include our core AI features
               with no hidden fees.
             </p>
@@ -161,8 +161,8 @@ const Pricing = () => {
       </section>
 
       {/* Pricing Cards */}
-      <section ref={pricingRef} className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section ref={pricingRef} className="py-24 sm:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-8">
             {pricingPlans.map((plan, index) => (
               <div
@@ -240,11 +240,11 @@ const Pricing = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-nia-bg-light">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-nia-dark mb-4">Frequently Asked Questions</h2>
-            <p className="text-xl text-nia-gray">Everything you need to know about our pricing</p>
+      <section className="py-24 sm:py-20 bg-nia-bg-light">
+        <div className="max-w-4xl mx-auto px-6 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-nia-dark mb-6 sm:mb-4 leading-tight">Frequently Asked Questions</h2>
+            <p className="text-lg sm:text-xl text-nia-gray px-4 sm:px-0">Everything you need to know about our pricing</p>
           </div>
 
           <div className="space-y-6">
@@ -259,21 +259,21 @@ const Pricing = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-nia-purple to-nia-teal">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">Ready to Get Started?</h2>
-          <p className="text-xl text-white/90 mb-8">
+      <section className="py-24 sm:py-20 bg-gradient-to-br from-nia-purple to-nia-teal">
+        <div className="max-w-4xl mx-auto px-6 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 sm:mb-6 leading-tight">Ready to Get Started?</h2>
+          <p className="text-lg sm:text-xl text-white/90 mb-8 sm:mb-8 px-4 sm:px-0 leading-relaxed">
             Join thousands of businesses already using Nia to transform their customer service
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-nia-purple px-8 py-4 rounded-lg text-lg font-medium hover:bg-white/90 transition-colors shadow-lg">
+            <button className="bg-white text-nia-purple px-8 py-4 rounded-xl text-lg font-medium hover:bg-white/90 hover:scale-105 transition-all duration-200 shadow-lg">
               Start 14-Day Free Trial
             </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-white/10 transition-colors">
+            <button className="border-2 border-white text-white px-8 py-4 rounded-xl text-lg font-medium hover:bg-white/10 transition-colors">
               Talk to Sales
             </button>
           </div>
-          <p className="text-white/70 text-sm mt-4">
+          <p className="text-white/70 text-sm mt-6 sm:mt-4 px-4 sm:px-0">
             No credit card required • Cancel anytime • 24/7 support
           </p>
         </div>
