@@ -24,7 +24,7 @@ const HeroSection = () => {
   const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation()
 
   return (
-    <section ref={heroRef} className="pt-24 pb-20 sm:pt-20 sm:pb-16 bg-gradient-to-br from-nia-bg-light to-white">
+    <section ref={heroRef} className="pt-32 pb-20 sm:pt-36 lg:pt-40 sm:pb-16 bg-gradient-to-br from-nia-bg-light to-white">
       <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
         <div className={`text-center transition-all duration-1000 ${heroVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
           <p className="text-nia-purple font-medium mb-6 sm:mb-4 tracking-wide uppercase text-sm">
@@ -329,7 +329,7 @@ const DemoSection = () => {
   }
 
   return (
-    <section ref={demoRef} className="py-24 sm:py-20 bg-gradient-to-br from-nia-purple to-nia-teal">
+    <section id="demo" ref={demoRef} className="py-24 sm:py-20 bg-gradient-to-br from-nia-purple to-nia-teal">
       <div className="max-w-4xl mx-auto px-6 sm:px-6 lg:px-8">
         <div className={`text-center mb-12 sm:mb-16 transition-all duration-1000 ${demoVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 sm:mb-8 leading-tight">Experience Nia in Action</h2>

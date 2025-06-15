@@ -15,90 +15,131 @@ const Layout = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            {/* Logo */}
-            <div className="flex items-center">
-              <Link to="/">
-                <img
-                  src="https://ext.same-assets.com/2901683797/2551623821.png"
-                  alt="Nia"
-                  className="h-8 w-auto"
-                />
+      <header className="fixed top-0 left-0 right-0 bg-white/98 backdrop-blur-md z-50 shadow-sm border-b border-gray-200/50">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="flex justify-between items-center h-20 sm:h-24">
+            {/* Logo Section */}
+            <div className="flex items-center space-x-3">
+              <Link to="/" className="flex items-center space-x-3 group">
+                <div className="relative">
+                  <img
+                    src="https://ext.same-assets.com/2901683797/2551623821.png"
+                    alt="Nia"
+                    className="h-12 w-auto sm:h-14 lg:h-16 transition-transform group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-nia-purple/20 to-nia-teal/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity -z-10" />
+                </div>
+                <div className="hidden sm:block">
+                  <div className="text-2xl font-bold bg-gradient-to-r from-nia-purple to-nia-teal bg-clip-text text-transparent">
+                    Nia
+                  </div>
+                  <div className="text-xs text-nia-gray font-medium tracking-wide">
+                    AI RECEPTIONIST
+                  </div>
+                </div>
               </Link>
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
+            <nav className="hidden lg:flex items-center space-x-10">
               <Link
                 to="/features"
-                className={`transition-colors ${
-                  isActive('/features') ? 'text-nia-purple font-medium' : 'text-nia-dark hover:text-nia-purple'
+                className={`relative py-2 px-4 rounded-lg font-medium transition-all duration-200 ${
+                  isActive('/features')
+                    ? 'text-nia-purple bg-nia-purple/10 shadow-sm'
+                    : 'text-nia-dark hover:text-nia-purple hover:bg-nia-purple/5'
                 }`}
               >
                 Features
+                {isActive('/features') && (
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-nia-purple rounded-full" />
+                )}
               </Link>
               <Link
                 to="/pricing"
-                className={`transition-colors ${
-                  isActive('/pricing') ? 'text-nia-purple font-medium' : 'text-nia-dark hover:text-nia-purple'
+                className={`relative py-2 px-4 rounded-lg font-medium transition-all duration-200 ${
+                  isActive('/pricing')
+                    ? 'text-nia-purple bg-nia-purple/10 shadow-sm'
+                    : 'text-nia-dark hover:text-nia-purple hover:bg-nia-purple/5'
                 }`}
               >
                 Pricing
+                {isActive('/pricing') && (
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-nia-purple rounded-full" />
+                )}
               </Link>
+              <a
+                href="#demo"
+                className="text-nia-dark hover:text-nia-purple hover:bg-nia-purple/5 py-2 px-4 rounded-lg font-medium transition-all duration-200"
+              >
+                Demo
+              </a>
             </nav>
 
             {/* Auth Buttons */}
-            <div className="hidden md:flex items-center space-x-4">
-              <button className="text-nia-dark hover:text-nia-purple transition-colors">Sign In</button>
-              <button className="bg-nia-purple text-white px-6 py-2 rounded-lg hover:bg-nia-purple/90 transition-colors">
-                Get Started
+            <div className="hidden md:flex items-center space-x-3">
+              <button className="text-nia-dark hover:text-nia-purple py-2 px-4 rounded-lg font-medium transition-all duration-200 hover:bg-nia-purple/5">
+                Sign In
+              </button>
+              <button className="bg-gradient-to-r from-nia-purple to-nia-teal text-white px-6 py-3 rounded-xl font-medium hover:shadow-lg hover:scale-105 transition-all duration-200 shadow-md">
+                Get Started Free
               </button>
             </div>
 
             {/* Mobile menu button */}
             <button
-              className="md:hidden"
+              className="lg:hidden relative p-2 rounded-lg hover:bg-gray-100 transition-colors"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+              <div className="w-6 h-6 flex flex-col justify-center items-center space-y-1">
+                <div className={`w-6 h-0.5 bg-nia-dark transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+                <div className={`w-6 h-0.5 bg-nia-dark transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`} />
+                <div className={`w-6 h-0.5 bg-nia-dark transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+              </div>
             </button>
           </div>
 
           {/* Mobile menu */}
           {isMenuOpen && (
-            <div className="md:hidden">
-              <div className="px-2 pt-2 pb-3 space-y-1 border-t">
+            <div className="lg:hidden">
+              <div className="px-6 pt-4 pb-6 space-y-3 border-t border-gray-200/50 bg-white/98 backdrop-blur-md">
                 <Link
                   to="/features"
-                  className="block px-3 py-2 text-nia-dark hover:text-nia-purple"
+                  className={`block px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
+                    isActive('/features')
+                      ? 'text-nia-purple bg-nia-purple/10'
+                      : 'text-nia-dark hover:text-nia-purple hover:bg-nia-purple/5'
+                  }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Features
                 </Link>
                 <Link
-                  to="/about"
-                  className="block px-3 py-2 text-nia-dark hover:text-nia-purple"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  About
-                </Link>
-                <Link
                   to="/pricing"
-                  className="block px-3 py-2 text-nia-dark hover:text-nia-purple"
+                  className={`block px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
+                    isActive('/pricing')
+                      ? 'text-nia-purple bg-nia-purple/10'
+                      : 'text-nia-dark hover:text-nia-purple hover:bg-nia-purple/5'
+                  }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Pricing
                 </Link>
-                <button className="block w-full text-left px-3 py-2 text-nia-dark hover:text-nia-purple">
-                  Sign In
-                </button>
-                <button className="w-full mt-2 bg-nia-purple text-white px-6 py-2 rounded-lg">
-                  Get Started
-                </button>
+                <a
+                  href="#demo"
+                  className="block px-4 py-3 rounded-lg font-medium text-nia-dark hover:text-nia-purple hover:bg-nia-purple/5 transition-all duration-200"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Demo
+                </a>
+                <div className="pt-3 border-t border-gray-200/50 space-y-3">
+                  <button className="block w-full text-left px-4 py-3 rounded-lg font-medium text-nia-dark hover:text-nia-purple hover:bg-nia-purple/5 transition-all duration-200">
+                    Sign In
+                  </button>
+                  <button className="w-full bg-gradient-to-r from-nia-purple to-nia-teal text-white px-6 py-3 rounded-xl font-medium shadow-md">
+                    Get Started Free
+                  </button>
+                </div>
               </div>
             </div>
           )}
