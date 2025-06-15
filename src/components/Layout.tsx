@@ -68,12 +68,12 @@ const Layout = () => {
                   <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-nia-purple rounded-full" />
                 )}
               </Link>
-              <a
-                href="#demo"
+              <button
+                onClick={() => document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' })}
                 className="text-nia-dark hover:text-nia-purple hover:bg-nia-purple/5 py-2 px-4 rounded-lg font-medium transition-all duration-200"
               >
                 Demo
-              </a>
+              </button>
             </nav>
 
             {/* Auth Buttons */}
@@ -125,13 +125,15 @@ const Layout = () => {
                 >
                   Pricing
                 </Link>
-                <a
-                  href="#demo"
-                  className="block px-4 py-3 rounded-lg font-medium text-nia-dark hover:text-nia-purple hover:bg-nia-purple/5 transition-all duration-200"
-                  onClick={() => setIsMenuOpen(false)}
+                <button
+                  onClick={() => {
+                    setIsMenuOpen(false)
+                    document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' })
+                  }}
+                  className="block w-full text-left px-4 py-3 rounded-lg font-medium text-nia-dark hover:text-nia-purple hover:bg-nia-purple/5 transition-all duration-200"
                 >
                   Demo
-                </a>
+                </button>
                 <div className="pt-3 border-t border-gray-200/50 space-y-3">
                   <button className="block w-full text-left px-4 py-3 rounded-lg font-medium text-nia-dark hover:text-nia-purple hover:bg-nia-purple/5 transition-all duration-200">
                     Sign In
